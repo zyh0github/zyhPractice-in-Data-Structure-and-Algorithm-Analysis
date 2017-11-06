@@ -1,9 +1,4 @@
-echo "# Practice-in-Data-Structure-and-Algorithm-Analysis" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/zyh0github/Practice-in-Data-Structure-and-Algorithm-Analysis.git
-git push -u origin master
+
 
 
 
@@ -55,11 +50,26 @@ Node* createNode(char ch)
  	return p;
   } 
   
-  //定位到某一行的第index号指针处
+//定位到某一行的第index号指针处
+  
+Row* locate(Row *line,int index)
+{
+	Row *p=line;
+	int i=-1;			//第0号都要指向下一个才是第0行节点 
+	while(p!=NULL&&i<index)
+	{
+		p=p->next;
+		i++;
+	}
+	
+	return p;
+ } 
+ 
+
 Node* locate(Node *line,int index)
 {
   	Node *p=line;
-  	int i=-1;
+  	int i=-1;				//第0号都要指向下一个才是这一行的第0号节点 
   	while(p!=NULL&&i<index)
   	{
   		p=p->next;
@@ -69,18 +79,7 @@ Node* locate(Node *line,int index)
 	  return p;
 } 
    
-Row* locate(Row *list,int index)
-{
-	Row *p=list;
-	int i=-1;
-	while(p!=NULL&&i<index)
-	{
-		p=p->next;
-		i++;
-	}
-	
-	return p;
- } 
+
  
  //插入节点
  bool insert(Node *list,int index,char c)
@@ -203,9 +202,8 @@ int YesOrNo()
 //主菜单
 void Menu()
 {
-	cout<<"***********************************"<<endl;
-	cout<<"**         简易文本编辑器        **"<<endl;
-	cout<<"***********************************"<<endl;
+	cout<<"         简易文本编辑器        "<<endl;
+	cout<<endl;
 	cout<<"\tr.读取文件到缓冲区"<<endl;
 	cout<<"\tn.新建文件"<<endl;
 	cout<<"\tw.内容写入文件并保存"<<endl;
@@ -522,10 +520,7 @@ void FindStr(Row *text)
 			cout<<"w：将缓冲区的内容写入文件"<<endl;
 			cout<<"q：退出编辑器，立即结束"<<endl;
 			cout<<endl;
-//			cout<<"n：当前行移到下一行"<<endl;
-//			cout<<"p：当前行移到上一行"<<endl;
-//			cout<<"b：当前行移到第一行"<<endl;
-//			cout<<"e：当前行移到最末行"<<endl;
+
 			cout<<"g：当前行移到用户指定行号"<<endl;
 			cout<<"c：当前列移到用户指定列号"<<endl;
 			cout<<endl;
@@ -533,7 +528,7 @@ void FindStr(Row *text)
 			cout<<"d：删除某一行，并将指针移到下一行"<<endl;
 			cout<<"f：从第一行开始查找包含用户请求的字符串的第一行，并返回行号"<<endl;
 			
-		//	cout<<"return：返回到上一步"<<endl;
+
 		}
 	private:
 		int b = 0;	
