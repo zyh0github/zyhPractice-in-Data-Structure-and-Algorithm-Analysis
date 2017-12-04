@@ -1,7 +1,3 @@
-
-
-
-
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -147,7 +143,7 @@ bool remove(Row *list,int index)
 		q=p->next;
 		p->next=q->next;
 		
-		clear(q->line);//清空字符链表
+		//clear(q->line);//清空字符链表
 		delete q->line;//删除字符链表表头
 		delete q;
 		
@@ -163,11 +159,11 @@ void clear(Row *text)
 	while(p)
 	{
 		q=p->next;
-		clear(p->line);
+		//clear(p->line);
 		
 		delete p->line;//删除字符链表表头
 		
-		delete p;
+		//delete p;
 		p=q; 
 	}
 }
@@ -442,7 +438,7 @@ void FindStr(Row *text)
 		{
 			col=pos;
 			k++;
-			cout<<str<<"第"<<k<<"次出现的位置是:第"<<row<<"行，第"<<col<<"列"<<endl;
+			cout<<str<<"第"<<k<<"次出现的位置是:第"<<row<<"行，第"<<col+1<<"列"<<endl;
 			cout<<"是否替换？（Y/N）";
 			int yon=YesOrNo();
 			while(yon==-1)
@@ -454,15 +450,15 @@ void FindStr(Row *text)
 			{
 				cout<<"将"<<str<<" 替换为：";
 				cin>>rep;
+				
 				int j;
-				for(j=0;j<str.length();j++)
-				{
-					remove(p->line,col);
-				}
+
 				for(j=0;j<rep.length();j++)
 				{
-					insert(p->line,col+j,rep[j]);
+					insert(p->line,col+j,rep[j]);//col+j,rep[i]
 				}
+				//删除节点 
+				 
 				cout<<"替换成功！"<<endl;
 			}
 			pos=line.find(str.c_str(),col+str.length());
@@ -628,7 +624,7 @@ void FindStr(Row *text)
 				break;
 			case 'f'://查找替换字符串
 				FindStr(text);
-				PrintText(text);
+				//PrintText(text);
 				break;
 			case 'g'://行移动
 				cout<<"请选择你要移动的行：";
