@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1514166009 source:d:\编程练习\c++\数据结构实验\拓扑排序\try2\main.cpp
+	<iostream>
+	"head.h"
+
+1514254863 d:\编程练习\c++\数据结构实验\拓扑排序\try2\head.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<queue>
+
+1514166009 source:d:\编程练习\github\practice-in-data-structure-and-algorithm-analysis\拓扑排序\try2\main.cpp
+	<iostream>
+	"head.h"
+
+1514254863 d:\编程练习\github\practice-in-data-structure-and-algorithm-analysis\拓扑排序\try2\head.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string.h>
+	<queue>
+
